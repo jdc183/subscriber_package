@@ -10,6 +10,7 @@ project(subscriber_package)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
+  publisher_package
 )
 
 ## System dependencies are found with CMake's conventions

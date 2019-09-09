@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
+#include "publisher_package/topic_name.h"
 
 //Method called upon receipt of message
 void chatterCallback(const std_msgs::String::ConstPtr& msg)
@@ -14,7 +15,7 @@ int main(int argc, char **argv)
 	ros::NodeHandle n;
 	
 	//Set up the chatterCallback to handle the event
-	ros::Subscriber sub = n.subscribe("publisher_topic", 1000, chatterCallback);
+	ros::Subscriber sub = n.subscribe(topic_name, 1000, chatterCallback);
 	
 	//Pump the callbacks!
 	ros::spin();
